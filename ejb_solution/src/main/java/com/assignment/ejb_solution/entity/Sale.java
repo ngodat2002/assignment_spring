@@ -3,11 +3,9 @@ package com.assignment.ejb_solution.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Getter
 @Setter
-@ToString
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -17,10 +15,11 @@ public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int slNo;
-    private long salesmanId;
+    private String salesmanId;
+
     @ManyToOne
-    @JoinColumn(name = "prodId",referencedColumnName = "prodId")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product productId;
-    private String salemanName;
-    private String dos;
+    private String salesmanName;
+    private String DOS;
 }

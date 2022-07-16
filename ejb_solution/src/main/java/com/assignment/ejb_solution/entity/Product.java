@@ -1,25 +1,23 @@
 package com.assignment.ejb_solution.entity;
 
-import com.assignment.ejb_solution.entity.base.BaseEntity;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
-@Getter
 @Setter
-@ToString
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "products")
-public class Product extends BaseEntity {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int prodId;
-    private String productName;
-    private String dateOfManf;
+    private int id;
+    private String name;
     private String description;
-    private double price;
+    private LocalDateTime dateOfManf;
+    private int price;
 }
